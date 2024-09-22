@@ -1,4 +1,4 @@
-rootProject.name = 'usbcameraapp'
+rootProject.name = 'USBCameraApp'
 
 dependencyResolutionManagement {
   versionCatalogs {

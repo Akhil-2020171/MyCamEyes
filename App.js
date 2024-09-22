@@ -1,13 +1,20 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import CameraComponent from './scripts/CameraComponent';
+import { Button, View } from 'react-native';
+import UsbCamera from './scripts/USBCamera';  // Correct the import path if necessary
 
-const App = () => {
+export default function App() {
+  const startUsbCameraActivity = () => {
+    UsbCamera.startUsbCameraActivity();
+  };
+
+  const stopUsbCameraActivity = () => {
+    UsbCamera.stopUsbCameraActivity();
+  };
+
   return (
-    <SafeAreaView>
-      <CameraComponent />
-    </SafeAreaView>
+    <View>
+      <Button title="Start USB Camera Activity" onPress={startUsbCameraActivity} />
+      <Button title="Stop USB Camera Activity" onPress={stopUsbCameraActivity} />
+    </View>
   );
-};
-
-export default App;
+}

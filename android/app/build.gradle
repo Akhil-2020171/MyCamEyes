@@ -117,10 +117,6 @@ android {
             useLegacyPackaging (findProperty('expo.useLegacyPackaging')?.toBoolean() ?: false)
         }
     }
-
-    lint{
-        baseline = file("lint-baseline.xml")
-    }
 }
 
 // Apply static values from `gradle.properties` to the `android.packagingOptions`
@@ -147,13 +143,8 @@ dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
-    // ChatGPT provided code
-    implementation fileTree(dir: "libs", include: ["*.aar", "*.jar"])
-    implementation "com.facebook.react:react-native:0.74.2"
-
-    // Other dependencies
-    implementation "androidx.appcompat:appcompat:1.7.0"
-    implementation "androidx.appcompat:appcompat-resources:1.7.0"
+    implementation fileTree(dir: "libs", include: ["*.aar"])
+    implementation("com.facebook.react:react-native:+")
 
     def isGifEnabled = (findProperty('expo.gif.enabled') ?: "") == "true";
     def isWebpEnabled = (findProperty('expo.webp.enabled') ?: "") == "true";
