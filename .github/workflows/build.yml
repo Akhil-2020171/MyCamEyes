@@ -1,0 +1,42 @@
+name: Build repo
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        jdk-version: [17, 21]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ matrix.jdk-version }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.jdk-version }}
+          distribution: "temurin"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.8
+
+      - name: Build with Gradle
+        run: ./android/gradlew build --no-build-cache
+
+      - name: Run tests
+        run: ./android/gradlew test --no-build-cache
