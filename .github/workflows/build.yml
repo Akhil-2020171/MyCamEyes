@@ -39,7 +39,9 @@ jobs:
         run: chmod +x ./android/gradlew
       
       - name: Build with Gradle
-        run: ./android/gradlew build --no-build-cache
+        run: ./gradlew build --no-build-cache
+        working-directory: ./android
 
       - name: Run tests
-        run: ./android/gradlew test --no-build-cache
+        run: ./gradlew test --no-build-cache
+        working-directory: ./android
