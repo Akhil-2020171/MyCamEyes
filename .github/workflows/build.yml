@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        jdk-version: [22]
+        jdk-version: [17]
 
     steps:
       - name: Checkout repository
