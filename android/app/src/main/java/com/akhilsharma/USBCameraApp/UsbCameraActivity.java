@@ -7,6 +7,7 @@ import android.view.Surface;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
+import android.widget.ImageButton;
 
 import com.serenegiant.common.BaseActivity;
 import com.serenegiant.usb.CameraDialog;
@@ -36,7 +37,7 @@ public final class UsbCameraActivity extends BaseActivity implements CameraDialo
         public void onClick(final View view) {
             synchronized (mSync) {
                 if (mUVCCamera == null) {
-                    CameraDialog.showDialog(MainActivity.this);
+                    CameraDialog.showDialog(UsbCameraActivity.this);
                 } else {
                     releaseCamera();
                 }
@@ -47,7 +48,7 @@ public final class UsbCameraActivity extends BaseActivity implements CameraDialo
     private final OnDeviceConnectListener mOnDeviceConnectListener = new OnDeviceConnectListener() {
         @Override
         public void onAttach(final UsbDevice device) {
-            Toast.makeText(MainActivity.this, "USB_DEVICE_ATTACHED", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UsbCameraActivity.this, "USB_DEVICE_ATTACHED", Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -65,7 +66,7 @@ public final class UsbCameraActivity extends BaseActivity implements CameraDialo
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    final Toast toast = Toast.makeText(MainActivity.this,
+                                    final Toast toast = Toast.makeText(UsbCameraActivity.this,
                                             "onStatus(statusClass=" + statusClass
                                                     + "; " +
                                                     "event=" + event + "; " +
@@ -90,7 +91,7 @@ public final class UsbCameraActivity extends BaseActivity implements CameraDialo
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    final Toast toast = Toast.makeText(MainActivity.this,
+                                    final Toast toast = Toast.makeText(UsbCameraActivity.this,
                                             "onButton(button=" + button + "; " +
                                                     "state=" + state + ")",
                                             Toast.LENGTH_SHORT);
@@ -146,7 +147,7 @@ public final class UsbCameraActivity extends BaseActivity implements CameraDialo
 
         @Override
         public void onDettach(final UsbDevice device) {
-            Toast.makeText(MainActivity.this, "USB_DEVICE_DETACHED", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UsbCameraActivity.this, "USB_DEVICE_DETACHED", Toast.LENGTH_SHORT).show();
         }
 
         @Override

@@ -10,4 +10,12 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:background="#ff000000"/>
+        
+    <ImageButton
+        android:id="@+id/camera_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:contentDescription="@string/camera"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_camera" />
 </LinearLayout>
