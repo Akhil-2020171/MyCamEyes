@@ -9,10 +9,19 @@ USB Camera App is a mobile application that allows you to connect a USB camera t
    ```bash
    npm install
    ```
+2. Build the app
+
+   ```bash
+   npx expo build:android
+   ```
+   or
+   ```bash
+   cd android && ./gradlew assembleRelease
+   ```
 
 Expo App must be installed in your mobile device. You can download it from [Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent) or [Apple App Store](https://apps.apple.com/us/app/expo-go/id982107779).
 
-2. Start the app
+3. Start the app
     
    ```bash
     npx expo start

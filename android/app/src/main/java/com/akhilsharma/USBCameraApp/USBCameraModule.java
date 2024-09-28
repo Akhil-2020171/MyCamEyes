@@ -7,14 +7,14 @@ import com.facebook.react.bridge.ReactMethod;
 
 //import com.akhilsharma.USBCameraApp.UsbCameraActivity;
 
-public class UsbCameraModule extends ReactContextBaseJavaModule {
+public class USBCameraModule extends ReactContextBaseJavaModule {
 
     private static ReactApplicationContext reactContext;
     
     // private static final String TAG = "UsbCameraModule";
     // private UsbCameraActivity usbCameraActivity;
 
-    UsbCameraModule(ReactApplicationContext context) {
+    USBCameraModule(ReactApplicationContext context) {
         super(context);
         reactContext = context;
         // usbCameraActivity = new UsbCameraActivity();
