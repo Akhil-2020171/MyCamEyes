@@ -22,7 +22,7 @@ import com.akhilsharma.widget.SimpleUVCCameraTextureView;
 
 import java.nio.ByteBuffer;
 
-protected final class UsbCameraActivity extends BaseActivity implements CameraDialog.CameraDialogParent {
+public final class UsbCameraActivity extends BaseActivity implements CameraDialog.CameraDialogParent {
     private final Object mSync = new Object(); // lock for this as a monitor
     private Toast mToast;
     private ImageButton mCameraButton;
