@@ -19,7 +19,7 @@ public class USBCameraPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new UsbCameraModule(reactContext));
+        modules.add(new USBCameraModule(reactContext));
         return modules;
     }
 
