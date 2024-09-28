@@ -7,7 +7,7 @@ import com.facebook.react.bridge.ReactMethod;
 
 // import com.akhilsharma.USBCameraApp.UsbCameraActivity;
 
-public class UsbCameraModule extends ReactContextBaseJavaModule {
+protected class UsbCameraModule extends ReactContextBaseJavaModule {
 
     private static ReactApplicationContext reactContext;
     

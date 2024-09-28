@@ -1,14 +1,14 @@
 import { NativeModules } from 'react-native';
 
-const { USBCameraModule } = NativeModules;
+const { UsbCameraModule } = NativeModules;
 
 const UsbCamera = {
   startUsbCameraActivity: () => {
-    return USBCameraModule.startUsbCameraActivity();
+    return UsbCameraModule.startUsbCameraActivity();
   },
 
   stopUsbCameraActivity: () => {
-    return USBCameraModule.stopUsbCameraActivity();
+    return UsbCameraModule.stopUsbCameraActivity();
   }
 };
 
